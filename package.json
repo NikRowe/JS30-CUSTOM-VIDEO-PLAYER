@@ -1,0 +1,24 @@
+{
+  "name": "js30-11-custom-video-player",
+  "version": "1.0.0",
+  "description": "Wes Bos' JavaScript30 #11 Custom Video Player",
+  "main": "scripts-FINISHED.js",
+  "scripts": {
+    "start": "npm run lite",
+    "lite": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NikRowe/JS30-CUSTOM-VIDEO-PLAYER.git"
+  },
+  "author": "Nik Rowe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NikRowe/JS30-CUSTOM-VIDEO-PLAYER/issues"
+  },
+  "homepage": "https://github.com/NikRowe/JS30-CUSTOM-VIDEO-PLAYER#readme",
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  }
+}
