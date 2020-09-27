@@ -44,7 +44,8 @@ function handleProgress() {
 }
 
 function scrub(e) {
-    console.log(e)
+    const scrubTime = (e.offsetX / progress.offsetWidth) * video.duration
+    video.currentTime = scrubTime
 }
 
 function resetVideo() {
@@ -61,6 +62,14 @@ video.addEventListener('timeupdate', handleProgress)
 toggle.addEventListener('click', togglePlay)
 resetButton.addEventListener('click', resetVideo)
 skipButtons.forEach(button => button.addEventListener('click', skip))
+
+let mousedown = false; 
 ranges.forEach(range => range.addEventListener('change', sliders))
-ranges.forEach(range => range.addEventListener('mousemove', sliders))
+ranges.forEach(range => range.addEventListener('mousemove', () => mousedown && sliders))
+ranges.forEach(range => range.addEventListener('mousedown', () => mousedown = true))
+ranges.forEach(range => range.addEventListener('mouseup', () => mousedown = false))
+
 progress.addEventListener('click', scrub)
+progress.addEventListener('mousemove', (e) => mousedown && scrub(e))
+progress.addEventListener('mousedown', () => mousedown = true)
+progress.addEventListener('mouseup', () => mousedown = false)
